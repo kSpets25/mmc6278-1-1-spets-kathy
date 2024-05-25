@@ -47,15 +47,7 @@ program
       console.log(chalk.bgWhite.bgBlue.bold(quote,author))
       console.log("Successfully added quote and author")
       
-    
-    // If no author is provided,  
-    // save the author as "Anonymous"
-    // After the quote/author is saved, 
-    // alert the user that the quote was added.
-    //console.log('Successfully added quote and author')
-    // You may style the text with chalk as you wish
-    // HINT: You can store both author and quote on the same line using
-    // a separator like pipe | and then using .split() when retrieving
+
   });
 
 program.parse();
