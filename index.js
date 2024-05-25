@@ -19,36 +19,34 @@ program
     const filteredLines = lines.filter(line => line)
     const randomLine = filteredLines[Math.floor(Math.random()*filteredLines.length)]
     const splitLine = randomLine.split("|")
-    
-      // console log the quote and author
     const [quote,author] = splitLine
-    console.log(quote, author)
-      
       // You may style the text with chalk as you wish
+    console.log(chalk.yellow.bgGreen.bold(quote, author))
+    
+      
+    
   });
 
 program
   .command("addQuote <quote> [author]")
   .description("adds a quote to the quote file")
   .action(async (quote, author) => {
-
+    
     // TODO: Add the quote and author to the quotes.txt file
     try {  
-      quote =  "Do one thing every day that scares you.|"
-      author = "Elenor Roosevelt\n"
       if (!author) {
-        author = "Anonymous\n"}
-      await fs.appendFile(QUOTE_FILE, [quote,author])
+        author = "Anonymous"}
+      await fs.appendFile(QUOTE_FILE, [quote +'.' + '|' + [author]] + "\n")
       console.log('Quote successfully added')
+      alert = "Quote successfully added"; 
       let newLines = [quote,author]
       console.log(newLines)
-      //alert("Quote successfully added!")
     } catch(err) {
-      
       console.log(err)
     }
-      console.log(quote,author)
-      console.log("Sucessfully added quote and author")
+      console.log(chalk.bgWhite.bgBlue.bold(quote,author))
+      console.log("Successfully added quote and author")
+      
     
     // If no author is provided,  
     // save the author as "Anonymous"
