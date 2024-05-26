@@ -20,11 +20,8 @@ program
     const randomLine = filteredLines[Math.floor(Math.random()*filteredLines.length)]
     const splitLine = randomLine.split("|")
     const [quote,author] = splitLine
-      // You may style the text with chalk as you wish
+  
     console.log(chalk.yellow.bgGreen.bold(quote, author))
-    
-      
-    
   });
 
 program
@@ -46,8 +43,6 @@ program
     }
       console.log(chalk.bgWhite.bgBlue.bold(quote,author))
       console.log("Successfully added quote and author")
-      
-
   });
 
 program.parse();
